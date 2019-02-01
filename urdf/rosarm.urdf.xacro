@@ -25,7 +25,7 @@
 	
 		<collision name="collision_base">
 			<geometry>
-				<box size="0.2 0.2 0.07"/>
+					<box size="${l1} ${b1} ${h1}"/>
 			</geometry>
 		</collision>
 
@@ -86,7 +86,7 @@
 		</visual>
 
 		<collision name="collision_link_1">
-			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<origin rpy="0 0 0" xyz="0 0 ${l3/2}"/>
 			<geometry>
 				<cylinder length="${l3}" radius="${r3}"/>
 			</geometry>
@@ -94,7 +94,7 @@
 
 		<inertial>
 			<mass value="${m3}"/>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<origin rpy="0 0 0" xyz="0 0 ${l3/2}"/>
 			<inertia ixx="${m3*((3*r3*r3)+(l3*l3))/12.0}" ixy="0" ixz="0" iyy="${m3*((3*r3*r3)+(l3*l3))/12.0}" iyz="0" izz="${(m3*r3*r3)/2.0}"/>
 		</inertial>
 	</link>
@@ -118,7 +118,7 @@
 		</visual>
 
 		<collision name="collision_link_1">
-			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<origin rpy="0 0 0" xyz="0 0 ${l3/2}"/>
 			<geometry>
 				<cylinder length="${l3}" radius="${r3}"/>
 			</geometry>
@@ -126,7 +126,7 @@
 
 		<inertial>
 			<mass value="${m3}"/>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<origin rpy="0 0 0" xyz="0 0 ${l3/2}"/>
 			<inertia ixx="${m3*((3*r3*r3)+(l3*l3))/12.0}" ixy="0" ixz="0" iyy="${m3*((3*r3*r3)+(l3*l3))/12.0}" iyz="0" izz="${(m3*r3*r3)/2.0}"/>
 		</inertial>
 	</link>
@@ -150,7 +150,7 @@
 		</visual>
 
 		<collision name="collision_link_1">
-			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<origin rpy="0 0 0" xyz="0 0 ${l3/2}"/>
 			<geometry>
 				<cylinder length="${l3}" radius="${r3}"/>
 			</geometry>
@@ -158,7 +158,7 @@
 
 		<inertial>
 			<mass value="${m3}"/>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<origin rpy="0 0 0" xyz="0 0 ${l3/2}"/>
 			<inertia ixx="${m3*((3*r3*r3)+(l3*l3))/12.0}" ixy="0" ixz="0" iyy="${m3*((3*r3*r3)+(l3*l3))/12.0}" iyz="0" izz="${(m3*r3*r3)/2.0}"/>
 		</inertial>
 	</link>
@@ -167,7 +167,7 @@
 		<origin rpy="0 0 0" xyz="0 0 ${l3}"/>
 		<child link="link_3"/>
 		<parent link="link_2"/>
-		<axis xyz="1 1 0"/>
+		<axis xyz="1 0 0"/>
 		<limit upper="3.14" lower="-3.14" effort="10000" velocity="1000"/>
 		<joint_properties damping="1.0" friction="1.0"/>
 	</joint>
