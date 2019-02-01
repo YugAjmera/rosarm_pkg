@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot name="rosarm">
+	
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+			<robotNamespace>/rosarm</robotNamespace>
+		</plugin>
+	</gazebo>
+
+</robot>

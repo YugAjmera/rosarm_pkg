@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<robot name="rosarm" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+ <material name="blue">
+ 	<color rgba="0 0 0.8 1"/>
+ </material>
+
+ <material name="white">
+	 <color rgba="1 1 1 1"/>
+ </material>
+		
+ <xacro:property name="m" value="2" />
+ <xacro:property name="l1" value="0.15" />		
+ <xacro:property name="b1" value="0.15" />		
+ <xacro:property name="h1" value="0.15" />
+
+	<link name="base_link">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<geometry>
+					<box size="${l1} ${b1} ${h1}"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	
+		<collision name="collision_base">
+			<geometry>
+				<box size="0.2 0.2 0.07"/>
+			</geometry>
+		</collision>
+
+		<inertial>
+			<mass value="${m}"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="${m*h1*b1/12.0}" ixy="0" ixz="0" iyy="${m*l1*h1/12.0}" iyz="0" izz="${m*l1*b1/12.0}"/>
+		</inertial>
+	</link>
+
+ <xacro:property name="l2" value="0.08" />		
+ <xacro:property name="r2" value="0.075" />
+ <xacro:property name="m2" value="0.5" />
+
+	<link name="base_z">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<geometry>
+					<cylinder radius="${r2}" length="${l2}" />
+			</geometry>
+			<material name="white"/>
+		</visual>
+
+		<collision name="collision_right_wheel">
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<geometry>
+				<cylinder length="${l2}" radius="${r2}"/>
+			</geometry>
+		</collision>
+
+		<inertial>
+			<mass value="${m2}"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="${m2*((3*r2*r2)+(l2*l2))/12.0}" ixy="0" ixz="0" iyy="${m2*((3*r2*r2)+(l2*l2))/12.0}" iyz="0" izz="${(m2*r2*r2)/2.0}"/>
+		</inertial>
+	</link>
+
+	<joint name="joint_1" type="revolute">
+		<origin rpy="0 0 0" xyz="0 0 ${l1/2+l2/2}"/>
+		<child link="base_z"/>
+		<parent link="base_link"/>
+		<axis xyz="0 0 1"/>
+		<limit upper="3.14" lower="-3.14" effort="10000" velocity="1000"/>
+		<joint_properties damping="1.0" friction="1.0"/>
+	</joint>
+	
+ <xacro:property name="l3" value="0.4" />		
+ <xacro:property name="r3" value="0.02" />
+ <xacro:property name="m3" value="0.1" />
+	
+	<link name="link_1">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 ${l3/2}"/>
+			<geometry>
+					<cylinder radius="${r3}" length="${l3}" />
+			</geometry>
+			<material name="white"/>
+		</visual>
+
+		<collision name="collision_link_1">
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<geometry>
+				<cylinder length="${l3}" radius="${r3}"/>
+			</geometry>
+		</collision>
+
+		<inertial>
+			<mass value="${m3}"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="${m3*((3*r3*r3)+(l3*l3))/12.0}" ixy="0" ixz="0" iyy="${m3*((3*r3*r3)+(l3*l3))/12.0}" iyz="0" izz="${(m3*r3*r3)/2.0}"/>
+		</inertial>
+	</link>
+
+	<joint name="shoulder" type="revolute">
+		<origin rpy="0 0 0" xyz="0 0 ${l2/2}"/>
+		<child link="link_1"/>
+		<parent link="base_z"/>
+		<axis xyz="1 1 0"/>
+		<limit upper="3.14" lower="-3.14" effort="10000" velocity="1000"/>
+		<joint_properties damping="1.0" friction="1.0"/>
+	</joint>
+
+	<link name="link_2">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 ${l3/2}"/>
+			<geometry>
+					<cylinder radius="${r3}" length="${l3}" />
+			</geometry>
+			<material name="white"/>
+		</visual>
+
+		<collision name="collision_link_1">
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<geometry>
+				<cylinder length="${l3}" radius="${r3}"/>
+			</geometry>
+		</collision>
+
+		<inertial>
+			<mass value="${m3}"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="${m3*((3*r3*r3)+(l3*l3))/12.0}" ixy="0" ixz="0" iyy="${m3*((3*r3*r3)+(l3*l3))/12.0}" iyz="0" izz="${(m3*r3*r3)/2.0}"/>
+		</inertial>
+	</link>
+
+	<joint name="elbow" type="revolute">
+		<origin rpy="0 0 0" xyz="0 0 ${l3}"/>
+		<child link="link_2"/>
+		<parent link="link_1"/>
+		<axis xyz="0 1 0"/>
+		<limit upper="3.14" lower="-3.14" effort="10000" velocity="1000"/>
+		<joint_properties damping="1.0" friction="1.0"/>
+	</joint>
+	
+	<link name="link_3">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 ${l3/2}"/>
+			<geometry>
+					<cylinder radius="${r3}" length="${l3}" />
+			</geometry>
+			<material name="white"/>
+		</visual>
+
+		<collision name="collision_link_1">
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<geometry>
+				<cylinder length="${l3}" radius="${r3}"/>
+			</geometry>
+		</collision>
+
+		<inertial>
+			<mass value="${m3}"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="${m3*((3*r3*r3)+(l3*l3))/12.0}" ixy="0" ixz="0" iyy="${m3*((3*r3*r3)+(l3*l3))/12.0}" iyz="0" izz="${(m3*r3*r3)/2.0}"/>
+		</inertial>
+	</link>
+
+	<joint name="wrist" type="revolute">
+		<origin rpy="0 0 0" xyz="0 0 ${l3}"/>
+		<child link="link_3"/>
+		<parent link="link_2"/>
+		<axis xyz="1 1 0"/>
+		<limit upper="3.14" lower="-3.14" effort="10000" velocity="1000"/>
+		<joint_properties damping="1.0" friction="1.0"/>
+	</joint>
+
+ <xacro:include filename="$(find rosarm_pkg)/urdf/rosarm_transmission.urdf" />
+ <xacro:include filename="$(find rosarm_pkg)/urdf/rosarm_plugin.urdf" />	
+
+</robot>
