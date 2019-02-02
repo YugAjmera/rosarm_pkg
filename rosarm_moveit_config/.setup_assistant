@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: rosarm_pkg
+    relative_path: urdf/rosarm.urdf.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/rosarm.srdf
+  CONFIG:
+    author_name: yug
+    author_email: yugajmera@gmail.com
+    generated_timestamp: 1549119044
