@@ -13,5 +13,5 @@ To view the model in RVIZ (using joint_state_publisher gui): `roslaunch rosarm_p
 
 To launch the model with controllers in Gazebo : `roslaunch rosarm_pkg urdf_trajectory_controller.launch `
 
-To control the arm with MoveIt : `roslaunch rosarm_moveit_config rosarm_planning_execution.launch` 
+To control the arm with MoveIt (keep the previous command running): `roslaunch rosarm_moveit_config rosarm_planning_execution.launch` 
 
