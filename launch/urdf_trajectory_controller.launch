@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
+	<!-- Launch empty world Gazebo -->
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<arg name="world_name" default="worlds/empty.world"/>
+		<arg name="paused" value="false"/>
+		<arg name="gui" value="true"/>
+	</include>
+
+
 <group ns="/rosarm">
+	
 	
 	<!-- Spawn the urdf model -->
 	<arg name="model" default=""/>
@@ -11,7 +20,7 @@
 	<arg name="y" default="0.0" />
 	<arg name="z" default="0.0" />
 	
-	<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -model $(arg model) -param robot_description"/>
+	<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -model rosarm -param robot_description"/>
 	
 	<!-- Load controllers -->
 	 <rosparam file="$(find rosarm_pkg)/config/rosarm_trajectory_controller.yaml" command="load"/> 
@@ -23,11 +32,6 @@
 	arm_controller
 	"/>
 	
-	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
-		<remap from="/joint_states" to="/rosarm/joint_states" />
-	</node>
 
-	<!-- Show in Rviz-->
-	<node name="rviz" pkg="rviz" type="rviz" args=""/>
 </group>
 </launch>
