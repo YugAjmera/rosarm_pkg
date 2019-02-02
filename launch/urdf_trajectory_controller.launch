@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+<group ns="/rosarm">
+	
+	<!-- Spawn the urdf model -->
+	<arg name="model" default=""/>
+	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find rosarm_pkg)/urdf/rosarm.urdf.xacro'" />
+
+		
+	<arg name="x" default="0.0" />
+	<arg name="y" default="0.0" />
+	<arg name="z" default="0.0" />
+	
+	<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -model $(arg model) -param robot_description"/>
+	
+	<!-- Load controllers -->
+	 <rosparam file="$(find rosarm_pkg)/config/rosarm_trajectory_controller.yaml" command="load"/> 
+
+	<!-- Controllers-->
+	<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/rosarm" 
+	args="--namespace=/rosarm
+	joint_state_controller
+	arm_controller
+	"/>
+	
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+		<remap from="/joint_states" to="/rosarm/joint_states" />
+	</node>
+
+	<!-- Show in Rviz-->
+	<node name="rviz" pkg="rviz" type="rviz" args=""/>
+</group>
+</launch>

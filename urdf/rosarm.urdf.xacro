@@ -103,7 +103,7 @@
 		<origin rpy="0 0 0" xyz="0 0 ${l2/2}"/>
 		<child link="link_1"/>
 		<parent link="base_z"/>
-		<axis xyz="1 1 0"/>
+		<axis xyz="1 0 0"/>
 		<limit upper="3.14" lower="-3.14" effort="10000" velocity="1000"/>
 		<joint_properties damping="1.0" friction="1.0"/>
 	</joint>
@@ -172,7 +172,7 @@
 		<joint_properties damping="1.0" friction="1.0"/>
 	</joint>
 
- <xacro:include filename="$(find rosarm_pkg)/urdf/rosarm_transmission.urdf" />
+ <xacro:include filename="$(find rosarm_pkg)/urdf/rosarm_transmission1.urdf" />
  <xacro:include filename="$(find rosarm_pkg)/urdf/rosarm_plugin.urdf" />	
 
 </robot>

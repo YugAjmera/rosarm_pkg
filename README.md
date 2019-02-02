@@ -14,4 +14,4 @@ Note: The links will fall down due to gravity since the controllers are not appl
 
 To launch the model with controllers :
 1. `roslaunch gazebo_ros empty_world.launch`
-2. `roslaunch rosarm_pkg urdf_with_controllers.launch`
+2. `roslaunch rosarm_pkg urdf_trajectory_controller.launch `
