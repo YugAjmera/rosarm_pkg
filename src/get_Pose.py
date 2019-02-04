@@ -5,7 +5,7 @@ import moveit_commander
 
 moveit_commander.roscpp_initialize(sys.argv)
 
-rospy.init_node('get_Pose', anonymous=True)
+rospy.init_node('get_Pose')
 
 group = moveit_commander.MoveGroupCommander("manipulator")
 
