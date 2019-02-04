@@ -1,0 +1,5 @@
+<launch>
+	
+	<node pkg="rosarm_pkg" type="planning_script.py" name="planning_node" output="screen">
+	</node>
+</launch>
