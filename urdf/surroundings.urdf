@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<robot name="myrobot" xmlns:xacro="http://ros.org/wiki/xacro">
+	
+ <xacro:property name="mt" value="2" />
+ <xacro:property name="lt" value="1" />		
+ <xacro:property name="bt" value="2" />		
+ <xacro:property name="ht" value="0.5" />
+	<link name="table">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<geometry>
+					<box size="${lt} ${bt} ${ht}"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	
+		<collision name="collision_base">
+			<geometry>
+					<box size="${lt} ${bt} ${ht}"/>
+			</geometry>
+		</collision>
+
+		<inertial>
+			<mass value="${mt}"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="${mt*ht*bt/12.0}" ixy="0" ixz="0" iyy="${mt*lt*ht/12.0}" iyz="0" izz="${mt*lt*bt/12.0}"/>
+		</inertial>
+	</link>
+
+	<gazebo reference="table">
+		<material>Gazebo/Wood</material>
+	</gazebo>
+	<gazebo>
+		<static>true</static>
+	</gazebo>
+
+	<joint name="world_to_table" type="fixed">
+		<parent link="world"/>
+		<child link="table"/>
+		<origin xyz="0 0 ${ht/2}" rpy="0 0 0"/>
+	</joint>
+</robot>

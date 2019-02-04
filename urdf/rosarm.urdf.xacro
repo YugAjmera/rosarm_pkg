@@ -8,11 +8,15 @@
  <material name="white">
 	 <color rgba="1 1 1 1"/>
  </material>
-		
+
+	<link name="world"/>
+
  <xacro:property name="m" value="2" />
  <xacro:property name="l1" value="0.15" />		
  <xacro:property name="b1" value="0.15" />		
  <xacro:property name="h1" value="0.15" />
+	
+ <xacro:include filename="$(find rosarm_pkg)/urdf/surroundings.urdf" />
 
 	<link name="base_link">
 		<visual>
@@ -35,6 +39,12 @@
 			<inertia ixx="${m*h1*b1/12.0}" ixy="0" ixz="0" iyy="${m*l1*h1/12.0}" iyz="0" izz="${m*l1*b1/12.0}"/>
 		</inertial>
 	</link>
+
+	<joint name="world_to_base" type="fixed">
+		<parent link="world"/>
+		<child link="base_link"/>
+		<origin xyz="0 0 ${ht+h1/2}" rpy="0 0 0"/>
+	</joint>
 
  <xacro:property name="l2" value="0.08" />		
  <xacro:property name="r2" value="0.075" />
