@@ -29,10 +29,11 @@ pose_target.position.x = 0.0918593523015
 pose_target.position.y = 0.816905790045
 pose_target.position.z = 0.903761804189
 
-
 group.set_pose_target(pose_target)
 
 plan1 = group.plan()
+
+group.go(wait=True)
 
 rospy.sleep(5)
 

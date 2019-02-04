@@ -18,3 +18,5 @@ To control the arm with MoveIt (keep the previous command running): `roslaunch r
 ![](Screenshot%20from%202019-02-02%2022-07-05.png)
 
 To display the postion of end effector : `roslaunch rosarm_pkg get_Pose.launch `
+
+To make the robot move on a praticular trajectory : `roslaunch rosarm_pkg planning.launch `
