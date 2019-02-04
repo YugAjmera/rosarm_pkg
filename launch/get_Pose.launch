@@ -1,0 +1,5 @@
+<launch>
+	
+	<node pkg="rosarm_pkg" type="get_Pose.py" name="get_Pose" output="screen">
+	</node>
+</launch>

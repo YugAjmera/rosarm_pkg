@@ -43,7 +43,7 @@
 	<joint name="world_to_base" type="fixed">
 		<parent link="world"/>
 		<child link="base_link"/>
-		<origin xyz="0 0 ${ht+h1/2}" rpy="0 0 0"/>
+		<origin xyz="0 0.5 ${ht+h1/2}" rpy="0 0 0"/>
 	</joint>
 
  <xacro:property name="l2" value="0.08" />		

@@ -16,3 +16,5 @@ To launch the model with controllers in Gazebo : `roslaunch rosarm_pkg urdf_traj
 To control the arm with MoveIt (keep the previous command running): `roslaunch rosarm_moveit_config rosarm_planning_execution.launch` 
 
 ![](Screenshot%20from%202019-02-02%2022-07-05.png)
+
+To display the postion of end effector : `roslaunch rosarm_pkg get_Pose.launch `
