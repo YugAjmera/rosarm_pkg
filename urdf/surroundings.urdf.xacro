@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<robot name="myrobot" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="surroundings" xmlns:xacro="http://ros.org/wiki/xacro">
 	
  <xacro:property name="mt" value="2" />
  <xacro:property name="lt" value="1" />		
