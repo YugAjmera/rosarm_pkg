@@ -11,15 +11,17 @@
 
 1. To view the model in RVIZ (using joint_state_publisher gui): `roslaunch rosarm_pkg urdf_rviz_view.launch`
 
-3. To view the model without controllers in Gazebo : `roslaunch rosarm_pkg urdf_gazebo_view.launch  ` 
+2. To view the model without controllers in Gazebo : `roslaunch rosarm_pkg urdf_gazebo_view.launch  ` 
    (Note: The links will fall down due to gravity)
 
-4. To launch the model with controllers in Gazebo : `roslaunch rosarm_pkg urdf_trajectory_controller.launch `
+3. To launch the model with controllers in Gazebo : `roslaunch rosarm_pkg urdf_trajectory_controller.launch `
 
-5. To control the arm with MoveIt (keep 2 running): `roslaunch rosarm_moveit_config rosarm_planning_execution.launch` 
+4. To view Kinect readings run 1 (with 3 running) and add Point Cloud, Depth camera,Camera in RIVZ.
+
+5. To control the arm with MoveIt (keep 3 running): `roslaunch rosarm_moveit_config rosarm_planning_execution.launch` 
 
 ![](Screenshot%20from%202019-02-02%2022-07-05.png)
 
-6. To display the postion of end effector : `roslaunch rosarm_pkg get_Pose.launch `
+5. To display the postion of end effector : `roslaunch rosarm_pkg get_Pose.launch `
 
-7. To make the robot move on a praticular trajectory (keep 2 and 3 running): `roslaunch rosarm_pkg planning.launch `
+6. To make the robot move on a praticular trajectory (keep 2 and 3 running): `roslaunch rosarm_pkg planning.launch `
