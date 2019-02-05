@@ -1,12 +1,12 @@
 # Robotic Arm based on ROS - ROSARM
 
-> `cd catkin_ws/src`
-> `catkin_create_pkg rosarm_pkg rospy rviz controller_manager gazebo_ros joint_state_publisher robot_state_publisher urdf`
->  Clone this repo here and replace the files in rosarm_pkg
-> `cd ..` (Go back to catkin_ws/)
-> `mv src/rosarm_pkg/rosarm_moveit_config src`
-> `catkin_make`
-> `source ./devel/setup.bash`
+- `cd catkin_ws/src`
+- `catkin_create_pkg rosarm_pkg rospy rviz controller_manager gazebo_ros joint_state_publisher robot_state_publisher urdf`
+-  Clone this repo here and replace the files in rosarm_pkg
+- `cd ..` (Go back to catkin_ws/)
+- `mv src/rosarm_pkg/rosarm_moveit_config src`
+- `catkin_make`
+- `source ./devel/setup.bash`
 
 
 1. To view the model in RVIZ (using joint_state_publisher gui): `roslaunch rosarm_pkg urdf_rviz_view.launch`
