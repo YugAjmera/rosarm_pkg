@@ -16,9 +16,8 @@
 
 3. To launch the model with controllers in Gazebo : `roslaunch rosarm_pkg urdf_trajectory_controller.launch `
 
-4. To view Kinect readings run 1 (with 3 running) and add Point Cloud, Depth camera,Camera in RIVZ.
 
-5. To control the arm with MoveIt (keep 3 running): `roslaunch rosarm_moveit_config rosarm_planning_execution.launch` 
+4. To control the arm with MoveIt (keep 3 running): `roslaunch rosarm_moveit_config rosarm_planning_execution.launch` 
 
 ![](Screenshot%20from%202019-02-02%2022-07-05.png)
 
