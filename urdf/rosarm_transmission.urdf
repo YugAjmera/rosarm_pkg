@@ -5,9 +5,9 @@
 		<type>transmission_interface/SimpleTransmission</type>
 		<joint name="joint_1">
 			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			
 		</joint>
 		<actuator name="motor1">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 			<mechanicalReduction>1</mechanicalReduction>
 		</actuator>
 	</transmission>
@@ -16,9 +16,9 @@
 		<type>transmission_interface/SimpleTransmission</type>
 		<joint name="shoulder">
 			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			
 		</joint>
 		<actuator name="motor2">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 			<mechanicalReduction>1</mechanicalReduction>
 		</actuator>
 	</transmission>
@@ -27,9 +27,9 @@
 		<type>transmission_interface/SimpleTransmission</type>
 		<joint name="elbow">
 			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			
 		</joint>
 		<actuator name="motor3">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 			<mechanicalReduction>1</mechanicalReduction>
 		</actuator>
 	</transmission>
@@ -38,9 +38,9 @@
 		<type>transmission_interface/SimpleTransmission</type>
 		<joint name="wrist">
 			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+			
 		</joint>
 		<actuator name="motor4">
-			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 			<mechanicalReduction>1</mechanicalReduction>
 		</actuator>
 	</transmission>
