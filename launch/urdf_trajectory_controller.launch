@@ -9,7 +9,6 @@
 
 
 	<!-- Spawn the urdf model -->
-	<arg name="model" default=""/>
 	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find rosarm_pkg)/urdf/rosarm.urdf.xacro'" />
 
 		

@@ -9,7 +9,6 @@
 	</include>	
 	
 	<!-- Spawn the urdf model -->
-	<arg name="model" default=""/>
 	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find rosarm_pkg)/urdf/rosarm.urdf.xacro'" />
 
 		
@@ -17,6 +16,6 @@
 	<arg name="y" default="0.0" />
 	<arg name="z" default="0.0" />
 	
-	<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -model $(arg model) -param robot_description"/>
+	<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -model rosarm -param robot_description"/>
 	
 </launch>
