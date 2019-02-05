@@ -10,6 +10,8 @@
  </material>
 
 	<link name="world"/>
+ <xacro:include filename="$(find rosarm_pkg)/urdf/kinect.urdf.xacro" />
+
 
  <xacro:property name="m" value="2" />
  <xacro:property name="l1" value="0.15" />		
