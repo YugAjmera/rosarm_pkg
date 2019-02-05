@@ -1,10 +1,11 @@
 <?xml version="1.0" ?>
-<robot name="surroundings" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="table" xmlns:xacro="http://ros.org/wiki/xacro">
 	
  <xacro:property name="mt" value="2" />
  <xacro:property name="lt" value="1" />		
  <xacro:property name="bt" value="2" />		
  <xacro:property name="ht" value="0.5" />
+
 	<link name="table">
 		<visual>
 			<origin rpy="0 0 0" xyz="0 0 0"/>

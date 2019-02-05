@@ -11,6 +11,7 @@
 
 	<link name="world"/>
  <xacro:include filename="$(find rosarm_pkg)/urdf/kinect.urdf.xacro" />
+ <xacro:include filename="$(find rosarm_pkg)/urdf/table.urdf.xacro" />
 
 
  <xacro:property name="m" value="2" />
@@ -43,7 +44,7 @@
 	<joint name="world_to_base" type="fixed">
 		<parent link="world"/>
 		<child link="base_link"/>
-		<origin xyz="0 0.5 ${h1/2}" rpy="0 0 0"/>
+		<origin xyz="0 0.3 ${ht+h1/2}" rpy="0 0 0"/>
 	</joint>
 
  <xacro:property name="l2" value="0.08" />		
