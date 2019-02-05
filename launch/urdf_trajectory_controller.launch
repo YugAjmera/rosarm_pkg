@@ -7,10 +7,7 @@
 		<arg name="gui" value="true"/>
 	</include>
 
-
-<group ns="/rosarm">
-	
-	
+<group ns="rosarm">
 	<!-- Spawn the urdf model -->
 	<arg name="model" default=""/>
 	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find rosarm_pkg)/urdf/rosarm.urdf.xacro'" />
@@ -31,8 +28,6 @@
 	joint_state_controller
 	arm_controller
 	"/>
-	
-	
 
 </group>
 </launch>

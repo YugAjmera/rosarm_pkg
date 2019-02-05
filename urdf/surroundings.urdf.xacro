@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<robot name="rosarm" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="surroundings" xmlns:xacro="http://ros.org/wiki/xacro">
 	
  <xacro:property name="mt" value="2" />
  <xacro:property name="lt" value="1" />		
@@ -39,39 +39,4 @@
 
 
 
- <xacro:property name="mk" value="0.2" />
- <xacro:property name="lk" value="0.3" />		
- <xacro:property name="bk" value="0.1" />		
- <xacro:property name="hk" value="0.05" />
-
-	<link name="kinect">
-		<visual>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
-			<geometry>
-					<box size="${lk} ${bk} ${hk}"/>
-			</geometry>
-		</visual>
-	
-		<collision name="collision_kinect">
-			<geometry>
-					<box size="${lt} ${bt} ${ht}"/>
-			</geometry>
-		</collision>
-
-		<inertial>
-			<mass value="${mk}"/>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
-			<inertia ixx="${mk*hk*bk/12.0}" ixy="0" ixz="0" iyy="${mk*lk*hk/12.0}" iyz="0" izz="${mk*lk*bk/12.0}"/>
-		</inertial>
-	</link>
-
-	<gazebo reference="kinect">
-  		<material>Gazebo/Black</material>
-	</gazebo>
-
-	<joint name="world_to_kinect" type="fixed">
-		<parent link="world"/>
-		<child link="kinect"/>
-		<origin xyz="0 -1 1" rpy="0 0 0"/>
-	</joint>
-</robot>
+ </robot>
