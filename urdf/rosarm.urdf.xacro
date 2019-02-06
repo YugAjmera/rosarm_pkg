@@ -10,7 +10,7 @@
  </material>
 
 	<link name="world"/>
- <xacro:include filename="$(find rosarm_pkg)/urdf/kinect.urdf.xacro" />
+ 
  <xacro:include filename="$(find rosarm_pkg)/urdf/table.urdf.xacro" />
 
 
