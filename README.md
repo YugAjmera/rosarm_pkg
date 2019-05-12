@@ -4,6 +4,7 @@
 
 - `cd catkin_ws/src`
 -  Clone this repo here : `git clone "https://github.com/YugAjmera/rosarm_pkg"`
+-  Move rosarm_moveit_config to src
 - `cd ..` (Go back to catkin_ws/)
 - `catkin_make`
 - `source ./devel/setup.bash`
