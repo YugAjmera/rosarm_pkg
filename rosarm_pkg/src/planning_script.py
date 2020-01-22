@@ -19,14 +19,14 @@ display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path
 
 pose_target = geometry_msgs.msg.Pose()
 
-pose_target.orientation.x =-0.228774278247
-pose_target.orientation.y = -0.619422375218
-pose_target.orientation.z = 0.175240006344
-pose_target.orientation.w = 0.730252826676
+pose_target.orientation.x = -0.326891322694
+pose_target.orientation.y = 0.649428384936
+pose_target.orientation.z = 0.185509239072
+pose_target.orientation.w = 0.661037940065
 
-pose_target.position.x = 0.0918593523015
-pose_target.position.y = 0.816905790045
-pose_target.position.z = 0.903761804189
+pose_target.position.x = 0.339562359682
+pose_target.position.y = 0.096364421399
+pose_target.position.z = 1.19932287634
 
 group.set_pose_target(pose_target)
 

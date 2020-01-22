@@ -27,4 +27,6 @@
 
 5. To display the postion of end effector : `roslaunch rosarm_pkg get_Pose.launch `
 
-6. To make the robot move on a praticular trajectory (keep 2 and 3 running): `roslaunch rosarm_pkg planning.launch `
+6. To plan a trajectory using specified end point : `roslaunch rosarm_pkg planning.launch `
+
+
